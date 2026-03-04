@@ -21,12 +21,25 @@
 
 
 
+PinConfig_t portc_13 = {.port = PORTC , .pin = PIN13 , .mode = OUTPUT , .outType = PUSH_BULL , .speed = MEDUIM_SPEED , .pullType = NO_PULL};
 
 int main(void)
 {
+
+
 	SystemClock_Config();
 
 	RCC_GPIOC_CLK_ENABLE();
+	gpio_pin_init(&portc_13);
+
+	gpio_set_pin_value(PORTC, PIN13, PIN_HIGH);
+	gpio_set_pin_value(PORTC, PIN13, PIN_LOW);
+
+	gpio_toggle_pin_value(PORTC, PIN13);
+	gpio_toggle_pin_value(PORTC, PIN13);
+	gpio_toggle_pin_value(PORTC, PIN13);
+
+
 
     /* Loop forever */
 	while(1)

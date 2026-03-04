@@ -1,0 +1,6 @@
+../Src/MCAL/gpio/gpio.c:20:15:gpio_pin_init	24	static
+../Src/MCAL/gpio/gpio.c:81:15:gpio_set_pin_value	24	static
+../Src/MCAL/gpio/gpio.c:111:15:gpio_toggle_pin_value	24	static
+../Src/MCAL/gpio/gpio.c:132:15:gpio_set_port_value	24	static
+../Src/MCAL/gpio/gpio.c:154:15:gpio_get_pin_value	24	static
+../Src/MCAL/gpio/gpio.c:182:15:gpio_get_port_value	24	static
