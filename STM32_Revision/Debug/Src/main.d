@@ -3,6 +3,10 @@ Src/main.o: ../Src/main.c ../Src/../Inc/main.h \
  ../Src/../Inc/MCAL/RCC/../../LIBRARY/Common_Macros.h \
  ../Src/../Inc/MCAL/RCC/../../LIBRARY/STM32F401xx.h \
  ../Src/../Inc/MCAL/RCC/RCC_Private.h ../Src/../Inc/LIBRARY/STM32F401xx.h \
+ ../Src/../Inc/Core_Prephirals/systick_interface.h \
+ ../Src/../Inc/Core_Prephirals/systick_private.h \
+ ../Src/../Inc/Core_Prephirals/../LIBRARY/Common_Macros.h \
+ ../Src/../Inc/Core_Prephirals/../LIBRARY/STM32F401xx.h \
  ../Src/../Inc/MCAL/GPIO/gpio_interface.h \
  ../Src/../Inc/MCAL/GPIO/gpio_private.h \
  ../Src/../Inc/MCAL/GPIO/../../LIBRARY/Common_Macros.h \
@@ -13,6 +17,10 @@ Src/main.o: ../Src/main.c ../Src/../Inc/main.h \
 ../Src/../Inc/MCAL/RCC/../../LIBRARY/STM32F401xx.h:
 ../Src/../Inc/MCAL/RCC/RCC_Private.h:
 ../Src/../Inc/LIBRARY/STM32F401xx.h:
+../Src/../Inc/Core_Prephirals/systick_interface.h:
+../Src/../Inc/Core_Prephirals/systick_private.h:
+../Src/../Inc/Core_Prephirals/../LIBRARY/Common_Macros.h:
+../Src/../Inc/Core_Prephirals/../LIBRARY/STM32F401xx.h:
 ../Src/../Inc/MCAL/GPIO/gpio_interface.h:
 ../Src/../Inc/MCAL/GPIO/gpio_private.h:
 ../Src/../Inc/MCAL/GPIO/../../LIBRARY/Common_Macros.h:

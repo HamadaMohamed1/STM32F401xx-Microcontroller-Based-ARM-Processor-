@@ -12,6 +12,7 @@
 #include  <stdint.h>
 #include "MCAL/RCC/RCC.h"
 #include "LIBRARY/STM32F401xx.h"
+#include "Core_Prephirals/systick_interface.h"
 #include "MCAL/GPIO/gpio_interface.h"
 /************************************** 	Macro Declaration          		**************************************/
 /************************************** 	Macro Function Declaration 		**************************************/

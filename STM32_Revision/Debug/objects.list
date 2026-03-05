@@ -1,3 +1,4 @@
+"./Src/Core_Prephirals/systick.o"
 "./Src/MCAL/RCC/RCC.o"
 "./Src/MCAL/gpio/gpio.o"
 "./Src/main.o"

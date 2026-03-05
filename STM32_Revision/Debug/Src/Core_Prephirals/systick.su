@@ -1,0 +1,4 @@
+../Src/Core_Prephirals/systick.c:19:15:systick_init	16	static
+../Src/Core_Prephirals/systick.c:54:15:systick_wait_blocking	24	static
+../Src/Core_Prephirals/systick.c:82:6:delay_ms	24	static
+../Src/Core_Prephirals/systick.c:104:6:delay_us	24	static
