@@ -31,6 +31,9 @@ int main(void)
 	RCC_GPIOC_CLK_ENABLE();
 	gpio_pin_init(&portc_13);
 
+	nvic_enable(USART1_IRQn);
+
+	nvic_set_pending_flag(USART1_IRQn);
 
 
 
@@ -82,6 +85,12 @@ Std_RetType_t SystemClock_Config(void)
 	return ret;
 }
 
+void USART1_IRQHandler(void)
+{
+	uint16_t n = 45;
 
+	n++;
 
+	n--;
+}
 

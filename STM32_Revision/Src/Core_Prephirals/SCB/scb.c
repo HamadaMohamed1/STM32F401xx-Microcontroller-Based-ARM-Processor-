@@ -1,25 +1,13 @@
 /*
- * main.h
+ * scb.c
  *
- *  Created on: Mar 1, 2026
+ *  Created on: Mar 8, 2026
  *      Author: Hamada
  */
 
-#ifndef MAIN_H_
-#define MAIN_H_
-
 /************************************** 	Includes                   		**************************************/
-#include  <stdint.h>
-#include "MCAL/RCC/RCC.h"
-#include "LIBRARY/STM32F401xx.h"
-#include "Core_Prephirals/systick_interface.h"
-#include "MCAL/GPIO/gpio_interface.h"
-#include "Core_Prephirals/SCB/scb_interface.h"
-#include "Core_Prephirals/NVIC/nvic_interface.h"
+#include  "../../../Inc/Core_Prephirals/SCB/scb_interface.h"
 /************************************** 	Macro Declaration          		**************************************/
 /************************************** 	Macro Function Declaration 		**************************************/
 /************************************** 	Data Type Declaration      		**************************************/
 /************************************** 	Function Declaration	   		**************************************/
-Std_RetType_t SystemClock_Config(void);
-
-#endif /* MAIN_H_ */

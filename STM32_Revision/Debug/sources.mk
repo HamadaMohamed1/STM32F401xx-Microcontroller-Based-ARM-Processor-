@@ -22,6 +22,8 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+Src/Core_Prephirals/NVIC \
+Src/Core_Prephirals/SCB \
 Src/Core_Prephirals \
 Src/MCAL/RCC \
 Src/MCAL/gpio \

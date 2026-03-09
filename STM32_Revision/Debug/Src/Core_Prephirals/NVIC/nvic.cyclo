@@ -1,0 +1,6 @@
+../Src/Core_Prephirals/NVIC/nvic.c:18:15:nvic_enable	3
+../Src/Core_Prephirals/NVIC/nvic.c:42:15:nvic_disable	3
+../Src/Core_Prephirals/NVIC/nvic.c:66:15:nvic_set_pending_flag	3
+../Src/Core_Prephirals/NVIC/nvic.c:90:15:nvic_clear_pending_flag	3
+../Src/Core_Prephirals/NVIC/nvic.c:114:15:nvic_set_priority	2
+../Src/Core_Prephirals/NVIC/nvic.c:135:15:nvic_get_active_flag	4

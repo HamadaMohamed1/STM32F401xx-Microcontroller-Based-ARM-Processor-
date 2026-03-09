@@ -8,6 +8,9 @@
 #ifndef LIBRARY_STM32F401XX_H_
 #define LIBRARY_STM32F401XX_H_
 
+/************************************** 	Includes               		**************************************/
+#include <stdint.h>
+
 /******************* Various Memory Base Addresses *******************/
 #define FLASH_BASE_ADDRESS            (0x08000000UL)
 #define SRAM_BASE_ADDRESS             (0x20000000UL)

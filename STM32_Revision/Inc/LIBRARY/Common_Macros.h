@@ -8,8 +8,7 @@
 #ifndef LIBRARY_COMMON_MACROS_H_
 #define LIBRARY_COMMON_MACROS_H_
 
-/************************************** 	Includes                   		**************************************/
-#include <stdint.h>
+
 /************************************** 	Macro Declaration          		**************************************/
 #define NULL					0
 /************************************** 	Macro Function Declaration 		**************************************/

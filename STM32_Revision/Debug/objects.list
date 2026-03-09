@@ -1,3 +1,5 @@
+"./Src/Core_Prephirals/NVIC/nvic.o"
+"./Src/Core_Prephirals/SCB/scb.o"
 "./Src/Core_Prephirals/systick.o"
 "./Src/MCAL/RCC/RCC.o"
 "./Src/MCAL/gpio/gpio.o"
