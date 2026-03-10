@@ -12,10 +12,24 @@
 #include  "LIBRARY/STM32F401xx.h"
 #include "LIBRARY/Common_Macros.h"
 /************************************** 	Macro Declaration          		**************************************/
+#define GROUP_PRIORITIES_16_SUB_PRIORITIES_NONE			0X05FA0000UL
 #define GROUP_PRIORITIES_8_SUB_PRIORITIES_2 			0X05FA0400UL
 #define GROUP_PRIORITIES_4_SUB_PRIORITIES_4 			0X05FA0500UL
 #define GROUP_PRIORITIES_2_SUB_PRIORITIES_8 			0X05FA0600UL
 #define GROUP_PRIORITIES_1_SUB_PRIORITIES_16			0X05FA0700UL
+
+/**
+ * 				4.4.5 Application interrupt and reset control register (AIRCR)
+ * 				Bits 31:16 VECTKEYSTAT/ VECTKEY Register , write 0x5FA to VECTKEY, otherwise the write is ignored
+ * 				Bits 10:8 PRIGROUP: Interrupt priority grouping field
+ *				Example:
+ * 				00000000 00000000   00000 "101" 00000000
+ * 				00000101 11111010   00000 "00"  00000000
+ * 			0x  05       fa         05      	00       => 0x05fa0500  then 4 groups & 4 sub
+ *
+ * /
+
+
 
 
 /******System handler control and state register (SHCSR)     Required privilege *******/

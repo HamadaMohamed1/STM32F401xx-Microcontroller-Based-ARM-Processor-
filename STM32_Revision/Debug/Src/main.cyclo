@@ -1,3 +1,4 @@
 ../Src/main.c:26:5:main	1
-../Src/main.c:66:15:SystemClock_Config	1
-../Src/main.c:88:6:USART1_IRQHandler	1
+../Src/main.c:81:15:SystemClock_Config	1
+../Src/main.c:103:6:USART1_IRQHandler	1
+../Src/main.c:113:6:USART2_IRQHandler	1

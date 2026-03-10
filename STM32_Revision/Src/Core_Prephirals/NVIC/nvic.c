@@ -114,13 +114,14 @@ Std_RetType_t nvic_clear_pending_flag(IRQn_Type IRQNum)
 Std_RetType_t nvic_set_priority(IRQn_Type IRQNum,uint8_t priority)
 {
 	Std_RetType_t ret= RET_OK;
-	if((IRQNum > SPI4_IRQn) || (0))  /*SPI4_IRQn is a higher IRQ number = 84*/
+	if(IRQNum > SPI4_IRQn)  /*SPI4_IRQn is a higher IRQ number = 84*/
 	{
 		ret = RET_ERROR;
 	}
 	else
 	{
-
+		/*Set interrupt priority*/
+		NVIC->IPR[IRQNum] = (priority << INTERRUPT_BITS_POS);
 	}
 	return ret;
 }

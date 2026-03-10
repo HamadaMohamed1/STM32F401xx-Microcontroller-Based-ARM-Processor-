@@ -27,13 +27,25 @@ int main(void)
 {
 	SystemClock_Config();
 	systick_init();
+	scb_set_priority_group(GROUP_PRIORITIES_4_SUB_PRIORITIES_4);  /*2-bits for group & 2-bits for sub*/
+
+
 
 	RCC_GPIOC_CLK_ENABLE();
+
 	gpio_pin_init(&portc_13);
 
+	nvic_set_priority(USART1_IRQn,7);  /*01 11 :   then group1 , sub 3*/
+	nvic_set_priority(USART2_IRQn,3);  /*00 11 :   then group0 , sub 3*/
+										/* USART2 higher priority than USART1*/
+
+
 	nvic_enable(USART1_IRQn);
+	nvic_enable(USART2_IRQn);
+
 
 	nvic_set_pending_flag(USART1_IRQn);
+
 
 
 
@@ -87,10 +99,23 @@ Std_RetType_t SystemClock_Config(void)
 
 void USART1_IRQHandler(void)
 {
-	uint16_t n = 45;
+	uint16_t f = 5;
+	f++;
 
-	n++;
+	nvic_set_pending_flag(USART2_IRQn);
 
-	n--;
+	while(1);
+}
+
+void USART2_IRQHandler(void)
+{
+	uint16_t f = 5;
+	f++;
+
+
+	//while(1);
+
+	f++;
+	f--;
 }
 

@@ -13,6 +13,8 @@
 /************************************** 	Macro Declaration          		**************************************/
 #define INTERRUPT_NOT_ACTIVE	(0)
 #define INTERRUPT_ACTIVE		(1)
+
+#define INTERRUPT_BITS_POS 		(4U)
 /************************************** 	Macro Function Declaration 		**************************************/
 /************************************** 	Data Type Declaration      		**************************************/
 typedef enum
