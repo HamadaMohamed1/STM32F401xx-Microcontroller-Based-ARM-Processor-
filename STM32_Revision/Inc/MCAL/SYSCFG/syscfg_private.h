@@ -1,27 +1,38 @@
 /*
- * main.h
+ * syscfg_private.h
  *
- *  Created on: Mar 1, 2026
+ *  Created on: Mar 15, 2026
  *      Author: Hamada
  */
 
-#ifndef MAIN_H_
-#define MAIN_H_
+#ifndef MCAL_SYSCFG_SYSCFG_PRIVATE_H_
+#define MCAL_SYSCFG_SYSCFG_PRIVATE_H_
 
 /************************************** 	Includes                   		**************************************/
-#include  <stdint.h>
-#include "MCAL/RCC/RCC.h"
-#include "LIBRARY/STM32F401xx.h"
-#include "Core_Prephirals/systick_interface.h"
-#include "MCAL/GPIO/gpio_interface.h"
-#include "Core_Prephirals/SCB/scb_interface.h"
-#include "Core_Prephirals/NVIC/nvic_interface.h"
-#include "MCAL/SYSCFG/syscfg_interface.h"
-#include "MCAL/EXTI/exti_interface.h"
+#include "../../LIBRARY/STM32F401xx.h"
+#include "../../LIBRARY/Common_Macros.h"
 /************************************** 	Macro Declaration          		**************************************/
 /************************************** 	Macro Function Declaration 		**************************************/
 /************************************** 	Data Type Declaration      		**************************************/
+typedef enum
+{
+	EXTI_LINE0=0,
+	EXTI_LINE1,
+	EXTI_LINE2,
+	EXTI_LINE3,
+	EXTI_LINE4,
+	EXTI_LINE5,
+	EXTI_LINE6,
+	EXTI_LINE7,
+	EXTI_LINE8,
+	EXTI_LINE9,
+	EXTI_LINE10,
+	EXTI_LINE11,
+	EXTI_LINE12,
+	EXTI_LINE13,
+	EXTI_LINE14,
+	EXTI_LINE15
+}EXTI_LINE_t;
 /************************************** 	Function Declaration	   		**************************************/
-Std_RetType_t SystemClock_Config(void);
 
-#endif /* MAIN_H_ */
+#endif /* MCAL_SYSCFG_SYSCFG_PRIVATE_H_ */

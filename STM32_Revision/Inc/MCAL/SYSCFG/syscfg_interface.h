@@ -1,27 +1,28 @@
 /*
- * main.h
+ * syscfg_interface.h
  *
- *  Created on: Mar 1, 2026
+ *  Created on: Mar 15, 2026
  *      Author: Hamada
  */
 
-#ifndef MAIN_H_
-#define MAIN_H_
+#ifndef MCAL_SYSCFG_SYSCFG_INTERFACE_H_
+#define MCAL_SYSCFG_SYSCFG_INTERFACE_H_
 
 /************************************** 	Includes                   		**************************************/
-#include  <stdint.h>
-#include "MCAL/RCC/RCC.h"
-#include "LIBRARY/STM32F401xx.h"
-#include "Core_Prephirals/systick_interface.h"
-#include "MCAL/GPIO/gpio_interface.h"
-#include "Core_Prephirals/SCB/scb_interface.h"
-#include "Core_Prephirals/NVIC/nvic_interface.h"
-#include "MCAL/SYSCFG/syscfg_interface.h"
-#include "MCAL/EXTI/exti_interface.h"
+#include "syscfg_private.h"
 /************************************** 	Macro Declaration          		**************************************/
 /************************************** 	Macro Function Declaration 		**************************************/
 /************************************** 	Data Type Declaration      		**************************************/
 /************************************** 	Function Declaration	   		**************************************/
-Std_RetType_t SystemClock_Config(void);
+/**
+ * @brief  : set external interrupt port to SYSCFG
+ * @param  : (line)  @ref EXTI_LINE_t
+ * @param  : (port)
+ * @return :
+ * 			(RET_OK) : The function done successfully
+ * 			(RET_ERROR) : The function has a problem to perform this action
+ */
+Std_RetType_t syscfg_set_EXTI_port(EXTI_LINE_t line , uint8_t port);
 
-#endif /* MAIN_H_ */
+
+#endif /* MCAL_SYSCFG_SYSCFG_INTERFACE_H_ */

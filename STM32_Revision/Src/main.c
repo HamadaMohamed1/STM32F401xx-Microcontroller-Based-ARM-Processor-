@@ -20,8 +20,26 @@
 
 
 
+void exti_portb1_handler(void);
+void exti_portb2_handler(void);
+
+void exti_porta9_handler(void);
+void exti_portc15_handler(void);
 
 PinConfig_t portc_13 = {.port = PORTC , .pin = PIN13 , .mode = OUTPUT , .outType = PUSH_BULL , .speed = MEDUIM_SPEED , .pullType = NO_PULL};
+
+/* These pins used as external interrupt */
+PinConfig_t portb_1  = {.port = PORTB , .pin = PIN1 , .mode = INPUT , .pullType = NO_PULL};
+PinConfig_t portb_2  = {.port = PORTB , .pin = PIN2 , .mode = INPUT , .pullType = NO_PULL};
+
+PinConfig_t porta_9  = {.port = PORTA , .pin = PIN9 , .mode = INPUT , .pullType = NO_PULL};
+PinConfig_t portc_15 = {.port = PORTC , .pin = PIN15, .mode = INPUT , .pullType = NO_PULL};
+/******/
+exti_config_t exti_obj1 = {.edge = RISING_EDGE , .source = EXTI_1 , .exti_handler = exti_portb1_handler};
+exti_config_t exti_obj2 = {.edge = RISING_EDGE , .source = EXTI_2 , .exti_handler = exti_portb2_handler};
+
+exti_config_t exti_obj3 = {.edge = RISING_EDGE , .source = EXTI_9 , .exti_handler =  exti_porta9_handler};
+exti_config_t exti_obj4 = {.edge = RISING_EDGE , .source = EXTI_15 , .exti_handler = exti_portc15_handler};
 
 int main(void)
 {
@@ -29,23 +47,60 @@ int main(void)
 	systick_init();
 	scb_set_priority_group(GROUP_PRIORITIES_4_SUB_PRIORITIES_4);  /*2-bits for group & 2-bits for sub*/
 
-
-
+	/*Enable the clock for peripherals*/
 	RCC_GPIOC_CLK_ENABLE();
-
+	RCC_SYSCFG_CLK_ENABLE();
+	RCC_GPIOB_CLK_ENABLE();
+	RCC_GPIOA_CLK_ENABLE();
+	/*********************************/
+	/*initialize GPIO pins */
+	gpio_pin_init(&portb_1);
+	gpio_pin_init(&portb_2);
+	gpio_pin_init(&porta_9);
+	gpio_pin_init(&portc_15);
+	/**/
 	gpio_pin_init(&portc_13);
+	/*initialize external interrupt line */
+	syscfg_set_EXTI_port(EXTI_LINE1, PORTB);
+	syscfg_set_EXTI_port(EXTI_LINE2, PORTB);
+	syscfg_set_EXTI_port(EXTI_LINE9, PORTA);
+	syscfg_set_EXTI_port(EXTI_LINE15,PORTC);
+	/*initialize interrupts priorities & interrupts enable via NVIC */
+	nvic_set_priority(EXTI1_IRQn, 3);	/*00 11 :   then group0 , sub 3*/
+	nvic_enable(EXTI1_IRQn);
 
-	nvic_set_priority(USART1_IRQn,7);  /*01 11 :   then group1 , sub 3*/
-	nvic_set_priority(USART2_IRQn,3);  /*00 11 :   then group0 , sub 3*/
-										/* USART2 higher priority than USART1*/
+	nvic_set_priority(EXTI2_IRQn, 3);	/*00 11 :   then group0 , sub 3*/
+	nvic_enable(EXTI2_IRQn);
+
+	nvic_set_priority(EXTI9_5_IRQn, 3);	/*00 11 :   then group0 , sub 3*/
+	nvic_enable(EXTI9_5_IRQn);
+
+	nvic_set_priority(EXTI15_10_IRQn, 3);	/*00 11 :   then group0 , sub 3*/
+	nvic_enable(EXTI15_10_IRQn);
 
 
-	nvic_enable(USART1_IRQn);
-	nvic_enable(USART2_IRQn);
 
+	/*initialize EXTI interrupts & enables them */
+	exti_initialize(&exti_obj1);
+	exti_enable(EXTI_LINE1);
 
-	nvic_set_pending_flag(USART1_IRQn);
+	exti_initialize(&exti_obj2);
+	exti_enable(EXTI_LINE2);
 
+	exti_initialize(&exti_obj3);
+	exti_enable(EXTI_LINE9);
+
+	exti_initialize(&exti_obj4);
+	exti_enable(EXTI_LINE15);
+
+	/**/
+	exti_set_pending_flag(EXTI_LINE1);
+
+	exti_set_pending_flag(EXTI_LINE2);
+
+	exti_set_pending_flag(EXTI_LINE9);
+
+	exti_set_pending_flag(EXTI_LINE15);
 
 
 
@@ -97,25 +152,30 @@ Std_RetType_t SystemClock_Config(void)
 	return ret;
 }
 
-void USART1_IRQHandler(void)
+
+
+void exti_portb1_handler(void)
 {
-	uint16_t f = 5;
-	f++;
-
-	nvic_set_pending_flag(USART2_IRQn);
-
-	while(1);
+	int number = 45;
+	number++;
 }
 
-void USART2_IRQHandler(void)
+void exti_portb2_handler(void)
 {
-	uint16_t f = 5;
-	f++;
-
-
-	//while(1);
-
-	f++;
-	f--;
+	int number = 55;
+	number++;
 }
+
+void exti_porta9_handler(void)
+{
+	int number = 60;
+	number++;
+}
+void exti_portc15_handler(void)
+{
+	int number = 70;
+	number++;
+}
+
+
 

@@ -27,12 +27,13 @@
  * 				00000101 11111010   00000 "00"  00000000
  * 			0x  05       fa         05      	00       => 0x05fa0500  then 4 groups & 4 sub
  *
- * /
+ */
 
 
 
 
-/******System handler control and state register (SHCSR)     Required privilege *******/
+/* System handler control and state register (SHCSR)     Required privilege*/
+
 #define USAGE_FAULT_ENABLE_BIT_POS 						(18)
 #define BUS_FAULT_ENABLE_BIT_POS 						(17)
 #define MEMORY_MANAGE_FAULT_ENABLE_BIT_POS 				(16)

@@ -25,7 +25,9 @@ SUBDIRS := \
 Src/Core_Prephirals/NVIC \
 Src/Core_Prephirals/SCB \
 Src/Core_Prephirals \
+Src/MCAL/EXTI \
 Src/MCAL/RCC \
+Src/MCAL/SYSCFG \
 Src/MCAL/gpio \
 Src \
 Startup \

@@ -1,0 +1,17 @@
+../Src/MCAL/EXTI/exti.c:22:15:exti_initialize	24	static
+../Src/MCAL/EXTI/exti.c:65:15:exti_enable	16	static
+../Src/MCAL/EXTI/exti.c:77:15:exti_disable	16	static
+../Src/MCAL/EXTI/exti.c:89:15:exti_set_pending_flag	16	static
+../Src/MCAL/EXTI/exti.c:101:15:exti_clear_pending_flag	16	static
+../Src/MCAL/EXTI/exti.c:115:15:exti_read_pending_flag	24	static
+../Src/MCAL/EXTI/exti.c:135:6:EXTI0_IRQHandler	8	static
+../Src/MCAL/EXTI/exti.c:150:6:EXTI1_IRQHandler	8	static
+../Src/MCAL/EXTI/exti.c:164:6:EXTI2_IRQHandler	8	static
+../Src/MCAL/EXTI/exti.c:178:6:EXTI3_IRQHandler	8	static
+../Src/MCAL/EXTI/exti.c:192:6:EXTI4_IRQHandler	8	static
+../Src/MCAL/EXTI/exti.c:206:6:EXTI9_5_IRQHandler	16	static
+../Src/MCAL/EXTI/exti.c:266:6:EXTI15_10_IRQHandler	16	static
+../Src/MCAL/EXTI/exti.c:336:6:EXTI16_PVD_IRQHandler	8	static
+../Src/MCAL/EXTI/exti.c:350:6:EXTI17_RTC_Alarm_IRQHandler	8	static
+../Src/MCAL/EXTI/exti.c:364:6:EXTI18_OTG_FS_WKUP_IRQHandler	8	static
+../Src/MCAL/EXTI/exti.c:383:6:EXTI22_RTC_WKUP_IRQHandler	8	static
